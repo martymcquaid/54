@@ -139,18 +139,19 @@ const Calculator: React.FC = () => {
           { label: '.', onClick: () => inputDot() },
           { label: '=', onClick: equals },
           { label: '+', onClick: () => setOp('+') },
+        { label: '⌫', onClick: backspace },
+        { label: 'C', onClick: clearAll },
+        { label: '', onClick: () => {} },
         ].map((btn, idx) => (
           <button
             key={idx}
             onClick={btn.onClick}
-            className="h-12 rounded-md bg-slate-700 text-white hover:bg-slate-600"
+            className={`h-12 rounded-md ${btn.label ? 'bg-slate-700 text-white hover:bg-slate-600' : ''}`}
             aria-label={`btn-${btn.label}`}
           >
             {btn.label}
           </button>
         ))}
-        <button onClick={backspace} className="h-12 col-span-1 rounded-md bg-slate-500 text-white hover:bg-slate-400">⌫</button>
-        <button onClick={clearAll} className="h-12 col-span-1 rounded-md bg-red-700 text-white hover:bg-red-600">C</button>
       </div>
     </div>
   )
