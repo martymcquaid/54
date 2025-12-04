@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Calculator from '../components/Calculator'
 
 export default function Home() {
   return (
@@ -9,6 +10,9 @@ export default function Home() {
         <p className="text-slate-500 mt-4 text-sm">
           Note: Use <code className="bg-slate-700 px-2 py-1 rounded">Link</code> from react-router-dom for navigation, not <code className="bg-slate-700 px-2 py-1 rounded">a</code> tags.
         </p>
+        <div className="mt-6">
+          <Calculator />
+        </div>
       </div>
     </div>
   )
